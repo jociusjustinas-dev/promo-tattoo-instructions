@@ -1,0 +1,270 @@
+/*
+  Promo tattoo instructions page.
+  Visual language, class naming (BEM, .paddings, .header, .footer) and tokens
+  follow the dadu.lt theme (mancanweb/dadu/css/styles.css).
+*/
+
+:root {
+  --navy: #13294B;
+  --ink: #273737;
+  --gold: #FFE7B6;
+  --sky: #EEF6FC;
+  --muted: #BBC8D2;
+  --white: #FFFFFF;
+}
+
+*, *:before, *:after { box-sizing: border-box; }
+
+html, body, div, span, h1, h2, h3, p, a, ul, li, section, header, footer, main, svg {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+header, footer, section, main { display: block; }
+ul { list-style: none; }
+img { max-width: 100%; }
+
+@font-face {
+  font-family: "YesevaOne";
+  src: url("../assets/fonts/YesevaOne-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  src: url("../assets/fonts/Roboto-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* Layout helpers (same values as dadu.lt) */
+.paddings { padding-left: 20px; padding-right: 20px; }
+@media (min-width: 1439px) {
+  .paddings { padding-left: 110px; padding-right: 110px; }
+}
+
+.main-container-second {
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header: navy bar, centred logo, gold hairline */
+.header {
+  position: relative;
+  z-index: 444;
+  width: 100%;
+  background: var(--navy);
+}
+
+.header__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 27.74px;
+  padding-bottom: 18.74px;
+}
+
+.header__container:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+}
+
+.header__item--logo { width: 60.59px; line-height: 0; }
+.header__item--logo img { width: 100%; height: auto; }
+
+@media (min-width: 767px) {
+  .header__item--logo { width: 79.41px; }
+}
+@media (min-width: 1439px) {
+  .header__item--logo { width: 89.34px; }
+}
+
+/* Hero */
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  padding-top: 56px;
+  padding-bottom: 96px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-family: "YesevaOne", serif;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 120%;
+}
+
+.hero__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  line-height: 140%;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+@media (min-width: 767px) {
+  .hero { padding-top: 80px; padding-bottom: 120px; }
+  .hero__title { font-size: 60px; }
+  .hero__text { font-size: 20px; }
+}
+
+/* Language blocks */
+.lang {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.lang:nth-of-type(even) { background: var(--sky); }
+.lang:last-of-type { border-bottom: 0; padding-bottom: 120px; }
+
+.lang__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.lang__head { display: flex; align-items: baseline; gap: 14px; }
+
+.lang__code {
+  font-family: "YesevaOne", serif;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 120%;
+  color: var(--ink);
+}
+
+.lang__name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: .6;
+}
+
+.lang__body { max-width: 760px; }
+
+.lang__title {
+  font-family: "YesevaOne", serif;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 120%;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.lang__block { margin-top: 28px; }
+.lang__block:first-of-type { margin-top: 0; }
+
+.lang__label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.lang__text { font-size: 17px; line-height: 1.55; }
+
+@media (min-width: 999px) {
+  .lang { padding-top: 72px; padding-bottom: 72px; }
+  .lang__inner { grid-template-columns: 240px 1fr; gap: 60px; }
+  .lang__head { flex-direction: column; gap: 4px; position: sticky; top: 24px; align-self: start; }
+  .lang__code { font-size: 80px; }
+}
+
+/* Footer: same circle logo overlap as dadu.lt */
+.footer {
+  position: relative;
+  background: var(--navy);
+  color: var(--white);
+  padding-top: 110px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.footer__logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -63px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 162.66px;
+  height: 163px;
+  padding-bottom: 42.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background: var(--navy);
+  z-index: 3;
+}
+
+.footer__text {
+  font-family: "YesevaOne", serif;
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 24px;
+}
+
+.footer a { color: var(--white); text-decoration: none; }
+.footer a:hover { color: var(--gold); }
+
+.footer__contacts { display: flex; flex-direction: column; gap: 4px; margin-bottom: 24px; }
+
+.footer__address {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.copyrights { font-size: 15px; color: var(--muted); margin-top: 24px; }
+
+@media (min-width: 1439px) {
+  .footer__text { font-size: 25px; }
+}
