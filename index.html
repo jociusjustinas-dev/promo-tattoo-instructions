@@ -250,5 +250,40 @@
     </div>
 </footer>
 
+<nav class="langnav" id="langnav" aria-label="Languages">
+    <ul class="langnav__list">
+        <li><a class="langnav__link" href="#en" hreflang="en">EN</a></li>
+        <li><a class="langnav__link" href="#pl" hreflang="pl">PL</a></li>
+        <li><a class="langnav__link" href="#cz" hreflang="cs">CZ</a></li>
+        <li><a class="langnav__link" href="#de" hreflang="de">DE</a></li>
+        <li><a class="langnav__link" href="#dk" hreflang="da">DK</a></li>
+        <li><a class="langnav__link" href="#fr" hreflang="fr">FR</a></li>
+        <li><a class="langnav__link" href="#ua" hreflang="uk">UA</a></li>
+    </ul>
+</nav>
+
+<script>
+(function () {
+    var links = document.querySelectorAll('.langnav__link');
+    var sections = document.querySelectorAll('.lang');
+
+    function update() {
+        var line = window.innerHeight * 0.4, current = null;
+        sections.forEach(function (s) {
+            if (s.getBoundingClientRect().top <= line) current = s.id;
+        });
+        links.forEach(function (a) {
+            var on = a.getAttribute('href') === '#' + current;
+            a.classList.toggle('is-active', on);
+            if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+})();
+</script>
+
 </body>
 </html>
